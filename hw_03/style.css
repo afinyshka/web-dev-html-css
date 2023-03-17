@@ -49,7 +49,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    line-height: 0.65;
+    /* line-height: 0.65; */
+}
+
+.header__logo {
+    display: flex;
 }
 
 .main-menu {
