@@ -116,6 +116,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease-out;
 }
 
 .sale__item img {
@@ -132,11 +133,10 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    transition: all 0.3s ease-out;
 }
 
 .sale__item:hover {
-    scale: 1.10;
+    transform: scale(1.10);
     filter: drop-shadow(2px 2px 8px #43231499);
 
 }
@@ -197,8 +197,8 @@ body {
 }
 
 .catalog__img {
-    transition: all 0.3s ease-out;
     margin-bottom: 24px;
+    transition: all 0.4s ease-out;
 }
 
 .catalog__item:hover .catalog__img {
@@ -224,11 +224,6 @@ body {
     padding-left: 16.5px;
     padding-right: 29px;
 
-}
-
-.catalog__item:hover::after:hover {
-    -webkit-box-shadow: 0 0 5px #fff;
-    box-shadow: 0 0 5px #fff;
 }
 
 .item-price {
@@ -265,11 +260,15 @@ body {
     display: flex;
 }
 
+.svg__cart path, .cart {
+    transition: all 0.4s ease-out;
+}
+
 .cart:hover {
     box-shadow: 0 0 5px #FFFFFF;
 }
 
-.cart:hover svg path {
+.cart:hover .svg__cart path {
     fill: #E05C6E;
 }
 
