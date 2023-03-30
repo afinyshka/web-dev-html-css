@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -60,6 +79,10 @@ body {
     border-left: 12px solid #F16D7F;
 }
 
+.top__slogan:hover {
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) backwards;
+}
+
 .top__title {
     font-weight: 900;
     font-size: 48px;
@@ -109,6 +132,13 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    transition: all 0.3s ease-out;
+}
+
+.sale__item:hover {
+    scale: 1.10;
+    filter: drop-shadow(2px 2px 8px #43231499);
+
 }
 
 .item-long {
@@ -165,25 +195,13 @@ body {
     background: #F8F8F8;
 }
 
-/* тут затемнение элемента */
-.catalog__item {
-    position: relative;
+.catalog__img {
+    transition: all 0.3s ease-out;
 }
 
-.catalog__item:hover:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 420px;
-    background: rgba(58, 56, 56, 0.86);
+.catalog__img:hover {
+    filter: brightness(50%);
 }
-
-/* .catalog__item-invisible {
-    
-} */
 
 .item-heading {
     font-weight: 400;
@@ -233,6 +251,7 @@ body {
     color: #F26376;
     cursor: pointer;
     margin: 48px auto 60px;
+    transition: all 0.3s ease-out;
 }
 
 .btn-browse:hover {
@@ -373,6 +392,7 @@ body {
     border-bottom-right-radius: 25px;
     width: 100px;
     flex-grow: 0;
+    transition: all 0.3s ease-out;
 }
 
 .subscribe__btn:hover {
@@ -408,6 +428,7 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    transition: all 0.3s ease-out;
 }
 
 .footer__logo-link:hover {
