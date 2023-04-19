@@ -275,6 +275,7 @@ summary::-webkit-details-marker {
   gap: 18px;
 }
 .filter[open] {
+  min-width: 360px;
   height: -moz-fit-content;
   height: fit-content;
   background: #FFFFFF;
@@ -333,6 +334,8 @@ summary::-webkit-details-marker {
 
 .choise {
   width: 360px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-top: 12px;
   display: flex;
   flex-direction: row;

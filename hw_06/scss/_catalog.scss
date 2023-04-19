@@ -33,6 +33,7 @@ summary {
     }
 
     &[open] {
+        min-width: 360px;
         height: fit-content;
         background: $siteColorLight;
         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
@@ -100,6 +101,7 @@ summary {
 
 .choise {
     width: 360px;
+    min-width: fit-content;
     padding-top: 12px;
     // padding-bottom: 36px;
     display: flex;
