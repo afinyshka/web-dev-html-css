@@ -19,6 +19,7 @@
 @import 'vars';
 @import 'scss/product';
 @import 'scss/catalog';
+@import 'scss/cart';
 
 * {
     margin: 0;
@@ -308,6 +309,7 @@ body {
 }
 
 .btn-browse {
+    font-family: inherit;
     padding: 15px 39px 14px;
     background: none;
     font-weight: 400;
@@ -433,6 +435,7 @@ body {
 
     &__input,
     &__btn {
+        font-family: inherit;
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
