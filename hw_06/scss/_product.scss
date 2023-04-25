@@ -10,7 +10,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    gap: 32px;
+
 
     &__title {
         font-style: normal;
@@ -246,6 +247,7 @@ summary {
         width: 140px;
         justify-content: space-evenly;
         align-items: center;
+        transition: all 0.3s ease-out;
 
         &:hover {
             color: $siteColorLight;
