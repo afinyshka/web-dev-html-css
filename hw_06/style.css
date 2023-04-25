@@ -262,14 +262,12 @@ summary::-webkit-details-marker {
   height: 93px;
 }
 
-.imtate {
+.imitate-blank {
   flex-basis: 360px;
-  flex-shrink: 0;
 }
 
 .filter {
   flex-basis: 360px;
-  flex-shrink: 0;
   padding: 13px 16px 16px 0px;
   width: 360px;
   box-sizing: border-box;
@@ -344,7 +342,6 @@ summary::-webkit-details-marker {
 
 .choise {
   flex-basis: 360px;
-  flex-shrink: 0;
   min-width: -moz-fit-content;
   min-width: fit-content;
   padding-top: 13px;
@@ -1346,7 +1343,7 @@ body {
   }
   .filter-box {
     justify-content: space-between;
-    height: 81px;
+    height: 71px;
     padding-top: 10px;
   }
   .filter {

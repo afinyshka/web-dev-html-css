@@ -19,14 +19,12 @@ summary {
     height: (132px - 39px);
 }
 
-.imtate {
+.imitate-blank {
     flex-basis: 360px;
-    flex-shrink: 0;
 }
 
 .filter {
     flex-basis: 360px;
-    flex-shrink: 0;
     padding: 13px 16px 16px 0px;
     width: 360px;
     box-sizing: border-box;
@@ -112,11 +110,8 @@ summary {
 
 .choise {
     flex-basis: 360px;
-    flex-shrink: 0;
-    // width: 360px;
     min-width: fit-content;
     padding-top: 13px;
-    // padding-bottom: 36px;
     display: flex;
     flex-direction: row;
     gap: 24px;
