@@ -145,6 +145,7 @@ summary {
         font-size: 14px;
         line-height: 17px;
         color: #6F6E6E;
+        cursor: pointer;
     }
 
     &__item[open]>.product-info__filter__items::after {

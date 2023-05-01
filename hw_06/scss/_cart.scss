@@ -28,6 +28,7 @@
         height: 50px;
         font-family: inherit;
         padding: 17px 40px 16px 39px;
+        text-transform: uppercase;
         border: 1px solid #A4A4A4;
         display: flex;
         justify-content: center;
@@ -154,9 +155,10 @@
         height: 35px;
         font-family: inherit;
         margin-top: 3px;
-        padding-top: 11px;
-        padding-bottom: 11px;
-        width: 102px;
+        padding: 11px 21px;
+        align-self: flex-start;
+        text-transform: uppercase;
+        // width: 102px;
         font-style: normal;
         font-weight: 300;
         font-size: 11px;
@@ -201,7 +203,7 @@
     box-sizing: border-box;
     background: #F5F3F3;
     min-height: 214px;
-    padding: 39px 34px 42px 43px;
+    padding: 39px 33px 42px 43px;
     width: 360px;
 
     &__sub {
@@ -244,10 +246,10 @@
 
     &__btn {
         height: 50px;
-        max-width: 273px;
+        max-width: 274px;
         font-family: inherit;
-        // padding: 15px 41px 15px;
-        padding: 15px;
+        padding: 15px 42px 15px;
+        align-self: center;
         font-style: normal;
         font-weight: 300;
         font-size: 16px;
