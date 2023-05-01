@@ -988,7 +988,6 @@ a {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: 260px 180px; */
   padding-top: 65px;
   padding-bottom: 96px;
 }

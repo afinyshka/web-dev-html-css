@@ -13,7 +13,6 @@ summary {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    // box-sizing: border-box;
     padding-top: 39px;
     position: relative;
     height: (132px - 39px);
@@ -163,11 +162,6 @@ summary {
         }
     }
 }
-
-// .catalog-items__content_catalog-padding {
-// padding-top: 128px;
-// padding-bottom: 48px;
-// }
 
 .pages-wrapper {
     display: flex;

@@ -253,7 +253,6 @@ a {
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: 260px 180px; */
     padding-top: 65px;
     padding-bottom: 96px;
 }
@@ -1066,14 +1065,12 @@ a {
         justify-content: center;
         gap: 22px;
         position: relative;
-        // width: 360px;
     }
 
     .filter {
         width: fit-content;
         position: absolute;
         left: calc(50% - 180px);
-        // padding-left: 0px;
 
         svg {
             width: 37.5px;
@@ -1089,7 +1086,6 @@ a {
 
     .filter[open] {
         position: absolute;
-        // width: 100%;
         top: 10px;
         left: 0px;
         left: calc(50% - 180px);

@@ -18,7 +18,6 @@
         justify-content: space-between;
         padding-top: 32px;
         gap: 48px;
-        // padding-bottom: 64px;
     }
 
     &__item {
@@ -52,7 +51,6 @@
 .cart-card {
     display: flex;
     height: 306px;
-    // width: 100%;
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
     background: $siteColorLight;
     position: relative;
@@ -158,7 +156,6 @@
         padding: 11px 21px;
         align-self: flex-start;
         text-transform: uppercase;
-        // width: 102px;
         font-style: normal;
         font-weight: 300;
         font-size: 11px;
