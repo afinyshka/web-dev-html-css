@@ -1,8 +1,9 @@
 .cart-content {
     padding-top: 96px;
-    padding-bottom: 64px;
+    padding-bottom: 128px;
     display: flex;
-    gap: 128px;
+    justify-content: space-between;
+    gap: 64px;
 }
 
 .cart-btn {
@@ -16,7 +17,8 @@
         display: flex;
         justify-content: space-between;
         padding-top: 32px;
-        padding-bottom: 64px;
+        gap: 48px;
+        // padding-bottom: 64px;
     }
 
     &__item {
@@ -24,9 +26,9 @@
         justify-content: center;
         align-items: center;
         height: 50px;
-        min-width: 225px;
         font-family: inherit;
         padding: 17px 40px 16px 39px;
+        text-transform: uppercase;
         border: 1px solid #A4A4A4;
         display: flex;
         justify-content: center;
@@ -38,6 +40,11 @@
         line-height: 17px;
         color: #000000;
         cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            box-shadow: 0 0 10px #E2E2E2;
+        }
     }
 }
 
@@ -45,6 +52,7 @@
 .cart-card {
     display: flex;
     height: 306px;
+    // width: 100%;
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
     background: $siteColorLight;
     position: relative;
@@ -52,8 +60,8 @@
     &__wrap {
         padding-top: 22px;
         padding-left: 31px;
+        padding-right: 66px;
         display: flex;
-        gap: 6px;
         flex-direction: column;
         gap: 42px;
         max-width: 262px;
@@ -140,36 +148,17 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-    }
-
-    &__input {
-        height: 45px;
-        box-sizing: border-box;
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 13px;
-        line-height: 16px;
-        color: $siteColorDark;
-        padding: 13px 18px 16px;
-        border: 1px solid #A4A4A4;
-        border-radius: 0px;
-        text-decoration: none;
-        outline: none;
-
-        &::placeholder {
-            color: #B1B1B1;
-        }
-
+        width: 360px;
     }
 
     &__btn {
         height: 35px;
         font-family: inherit;
         margin-top: 3px;
-        padding-top: 11px;
-        padding-bottom: 11px;
-        width: 102px;
+        padding: 11px 21px;
+        align-self: flex-start;
+        text-transform: uppercase;
+        // width: 102px;
         font-style: normal;
         font-weight: 300;
         font-size: 11px;
@@ -179,14 +168,43 @@
         border-radius: 0px;
         background: none;
         cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            box-shadow: 0 0 10px #E2E2E2;
+        }
     }
 }
 
+.input {
+    height: 45px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: $siteColorDark;
+    padding: 13px 18px 16px;
+    border: 1px solid #A4A4A4;
+    border-radius: 0px;
+    text-decoration: none;
+    outline: none;
+
+    &::placeholder {
+        color: #B1B1B1;
+    }
+
+}
+
 .total {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     background: #F5F3F3;
     min-height: 214px;
-    padding: 39px 34px 42px 43px;
+    padding: 39px 33px 42px 43px;
+    width: 360px;
 
     &__sub {
         display: flex;
@@ -228,9 +246,10 @@
 
     &__btn {
         height: 50px;
-        width: 273px;
+        max-width: 274px;
         font-family: inherit;
-        padding: 15px 41px 15px;
+        padding: 15px 42px 15px;
+        align-self: center;
         font-style: normal;
         font-weight: 300;
         font-size: 16px;
@@ -239,5 +258,10 @@
         background: $siteColorMain;
         border: none;
         cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            box-shadow: 0 0 5px $siteColorMainHover;
+        }
     }
 }
