@@ -1,0 +1,117 @@
+.registration {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 64px;
+    padding-bottom: 96px;
+    gap: 22px;
+
+    &__left {
+        width: 360px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-shrink: 0;
+    }
+
+    &__heading {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: $siteColorDark;
+    }
+
+    &__radio-box {
+        margin-top: 11px;
+        margin-bottom: 13px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 13px;
+        color: #000000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &:nth-child(2) {
+            margin-left: 20px;
+        }
+    }
+
+    &__radio[type="radio"] {
+        height: 17px;
+        width: 17px;
+    }
+
+    &__text {
+        margin-top: -5px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #B1B1B1;
+    }
+
+    &__btn {
+        margin-top: 19px;
+        font-family: inherit;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $siteColorLight;
+        background: $siteColorMain;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 16px 29px 17px;
+        width: 167px;
+        display: flex;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            box-shadow: 0 0 5px $siteColorMainHover;
+        }
+    }
+
+    &__right {
+        max-width: 652px;
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        flex-shrink: 1;
+    }
+
+    &__perks {
+        &:first-child {
+            margin-bottom: 1px;
+        }
+    }
+
+    &__ul {
+        list-style-image: url('img/tick.svg');
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 16px;
+
+
+        &-item {
+            margin-left: 24px;
+            padding-left: 20px;
+            list-style-position: outside;
+        }
+
+    }
+}
+
+#female {
+    margin-left: 10px;
+}

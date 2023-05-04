@@ -7,17 +7,24 @@ summary {
 }
 
 .filter-box {
+    flex-wrap: wrap;
+    justify-content: center;
+
     display: flex;
     flex-direction: row;
     gap: 30px;
-    box-sizing: border-box;
     padding-top: 39px;
     position: relative;
-    height: 138px;
+    height: (132px - 39px);
+}
+
+.imitate-blank {
+    flex-basis: 360px;
 }
 
 .filter {
-    padding: 13px 16px 16px;
+    flex-basis: 360px;
+    padding: 13px 16px 16px 0px;
     width: 360px;
     box-sizing: border-box;
     z-index: 10;
@@ -33,6 +40,7 @@ summary {
     }
 
     &[open] {
+        padding-left: 16px;
         min-width: 360px;
         height: fit-content;
         background: $siteColorLight;
@@ -100,10 +108,9 @@ summary {
 }
 
 .choise {
-    width: 360px;
+    flex-basis: 360px;
     min-width: fit-content;
-    padding-top: 12px;
-    // padding-bottom: 36px;
+    padding-top: 13px;
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -117,7 +124,7 @@ summary {
         flex-direction: column;
         gap: 9px;
         position: absolute;
-        top: 19px;
+        top: 28px;
         left: 142px;
         z-index: 4;
 
@@ -137,6 +144,7 @@ summary {
         font-size: 14px;
         line-height: 17px;
         color: #6F6E6E;
+        cursor: pointer;
     }
 
     &__item[open]>.product-info__filter__items::after {
@@ -155,51 +163,47 @@ summary {
     }
 }
 
-.catalog-items__content_catalog-padding {
-    // padding-top: 128px;
-    padding-bottom: 48px;
-}
-
 .pages-wrapper {
     display: flex;
     justify-content: center;
 }
 
 .pages-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-top: 48px;
     margin-bottom: 96px;
-    width: 284px;
-    height: 44px;
+    padding: 12px 16px;
     border: 1px solid #EBEBEB;
     border-radius: 3px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    &__btn {
-        border: none;
-        background: none;
-        display: flex;
-        align-items: center;
-    }
-
-    &__content {
-        width: 202px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 19px;
-        color: #C4C4C4;
-
-    }
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
 
     &__item {
+        text-decoration: none;
+        color: #C4C4C4;
+        display: inline-flex;
+
+
+        &:not(:nth-child(7), :last-child) {
+            margin-right: 20px;
+        }
+
         &_active {
             color: $siteColorMain;
         }
-    }
 
+        &:hover:not(.pages-box__item_active) {
+            color: $siteColorDark;
+        }
+
+        &:hover svg path {
+            fill: $siteColorMain;
+        }
+    }
 }
