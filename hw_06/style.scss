@@ -91,6 +91,7 @@ a {
 
     &__menu-label {
         display: flex;
+        cursor: pointer;
     }
 }
 
@@ -179,12 +180,10 @@ a {
     left: -99999999px;
     visibility: hidden;
 
-
     &:checked~.mobile-menu {
         right: 0px;
     }
 }
-
 
 .cart-circle {
     display: flex;
@@ -888,7 +887,7 @@ a {
 
     .item-long {
         grid-column: span 1;
-        min-height: 180px;
+        min-height: 111px;
     }
 
     .top__img {

@@ -169,41 +169,41 @@ summary {
 }
 
 .pages-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-top: 48px;
     margin-bottom: 96px;
-    width: 284px;
-    height: 44px;
+    padding: 12px 16px;
     border: 1px solid #EBEBEB;
     border-radius: 3px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     box-sizing: border-box;
-
-    &__btn {
-        border: none;
-        background: none;
-        display: flex;
-        align-items: center;
-    }
-
-    &__content {
-        width: 202px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 19px;
-        color: #C4C4C4;
-
-    }
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
 
     &__item {
+        text-decoration: none;
+        color: #C4C4C4;
+        display: inline-flex;
+
+
+        &:not(:nth-child(7), :last-child) {
+            margin-right: 20px;
+        }
+
         &_active {
             color: $siteColorMain;
         }
-    }
 
+        &:hover:not(.pages-box__item_active) {
+            color: $siteColorDark;
+        }
+
+        &:hover svg path {
+            fill: $siteColorMain;
+        }
+    }
 }
