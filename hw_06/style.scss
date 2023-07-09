@@ -398,6 +398,7 @@ a {
     position: absolute;
     top: 190px;
     left: 110px;
+    cursor: pointer;
 }
 
 .catalog__item:hover .cart {
@@ -483,6 +484,13 @@ a {
         padding-left: 22px;
         padding-right: 22px;
     }
+}
+
+.footer__cart-items {
+    display: none;
+    flex-direction: column;
+    margin-top: 96px;
+    margin-bottom: 96px;
 }
 
 .footer__subscribe {

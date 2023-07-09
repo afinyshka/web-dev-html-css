@@ -1218,10 +1218,9 @@ a {
 }
 
 .footer__cart-items {
-  display: none;
-  flex-direction: column;
   margin-top: 96px;
   margin-bottom: 96px;
+  text-align: center;
 }
 
 .footer__subscribe {

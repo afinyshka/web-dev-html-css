@@ -1,3 +1,5 @@
+// create section Featured Items 
+
 const saleContent = document.querySelector('.sale__content')
 const catalogItemsContent = document.createElement('section')
 // catalogItemsContent.textContent = 'DANCE'
@@ -23,6 +25,8 @@ const catalogItemsFlex = document.createElement('div')
 catalogItemsFlex.classList.add('catalog-items__flex')
 catalogItemsContent.append(catalogItemsFlex)
 
+// create product cards
+
 const dataFeatured = JSON.parse(featuredData) // JSON-строка в массив
 
 dataFeatured.forEach(element => {
@@ -38,27 +42,27 @@ dataFeatured.forEach(element => {
 
     const catalogItemWrap = document.createElement('div')
     catalogItemWrap.classList.add('catalog__item-wrap')
-    catalogItem.append(catalogItemWrap) // сюда остальные вкладываются
+    catalogItem.append(catalogItemWrap) // the rest are here
 
     const itemHeading = document.createElement('a')
     itemHeading.classList.add('item-heading')
     itemHeading.href = element.href
-    itemHeading.textContent = element.Product_name
+    itemHeading.textContent = element.product_name
     catalogItemWrap.append(itemHeading)
 
     const itemText = document.createElement('p')
     itemText.classList.add('item-text')
-    itemText.textContent = element.Descrption
+    itemText.textContent = element.description
     catalogItemWrap.append(itemText)
 
     const itemPrice = document.createElement('p')
     itemPrice.classList.add('item-price')
-    itemPrice.textContent = element.Currency + element.Price
+    itemPrice.textContent = element.currency + element.price
     catalogItemWrap.append(itemPrice)
 
     const cart = document.createElement('a')
     cart.classList.add('cart')
-    cart.href = '#'
+    cart.setAttribute("data-id", element.id)
     const svgCart = document.createElement('span')
     svgCart.innerHTML = `<svg class="svg__cart
     " width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,10 +74,10 @@ dataFeatured.forEach(element => {
     const cartText = document.createElement('span')
     cartText.textContent = 'Add to Cart'
     cart.append(cartText)
-    catalogItemWrap.append(cart) // сюда вставить svg
+    catalogItemWrap.append(cart)
 })
 
-const catalogButton = document.createElement('dv')
+const catalogButton = document.createElement('div')
 catalogButton.classList.add('catalog__button')
 
 const btnBrowse = document.createElement('button')
@@ -86,3 +90,155 @@ btnBrowse.addEventListener('click', function () {
 
 catalogButton.append(btnBrowse)
 catalogItemsContent.append(catalogButton)
+
+//----------------------------------------------------------
+// here try to create a section
+
+const cartItemBox = document.createElement('div')
+cartItemBox.classList.add('footer__cart-items', 'center')
+const footerAdvantages = document.querySelector('.footer__advantages')
+footerAdvantages.insertAdjacentElement('afterend', cartItemBox)
+
+const cartItemHeader = document.createElement('div')
+cartItemHeader.classList.add('catalog__header')
+cartItemBox.append(cartItemHeader)
+
+const cartItemSubheader = document.createElement('h3')
+cartItemSubheader.classList.add('catalog__subheader')
+cartItemSubheader.textContent = 'Cart Items'
+cartItemHeader.append(cartItemSubheader)
+
+const cartItemContent = document.createElement('div')
+cartItemContent.classList.add('cart-btn')
+cartItemBox.append(cartItemContent)
+
+//---------------------------------------------
+// add item in the cart
+
+const cardLinkEl = document.querySelectorAll('.cart')
+let cartItemsArray = []
+
+cardLinkEl.forEach(item => item.addEventListener('click', function (e) {
+
+    dataFeatured.forEach(product => {
+
+        if (cartItemsArray.length === 0 && product.id === e.target.parentElement.dataset.id) {
+            cartItemsArray.push(product)
+            cardCartCreation(product, e.target.parentElement.dataset.id)
+        }
+
+        else if (product.id === e.target.parentElement.dataset.id && cartItemsArray.length !== 0) {
+
+            if (cartItemsArray.some(el => el.id === e.target.parentElement.dataset.id)) {
+                let productInputChange = document.querySelector(`#${e.target.parentElement.dataset.id}`)
+                productInputChange.value = Number(productInputChange.value) + 1
+                product.quantity = Number(productInputChange.value) // to count totale items in cart
+            } else {
+                cardCartCreation(product, e.target.parentElement.dataset.id)
+                cartItemsArray.push(product)
+            }
+        }
+    })
+
+
+    // remove items from the cart
+
+    const exitCrosses = document.querySelectorAll('.cart-card__remove-item')
+
+    exitCrosses.forEach(cartAddBtn => cartAddBtn.addEventListener('click', function (e) {
+
+        e.target.closest('.cart-card').remove()
+
+        for (let i = 0; i < cartItemsArray.length; i++) {
+            if (e.target.id === cartItemsArray[i].id) {
+                cartItemsArray.splice(i, 1)
+                break
+            }
+        }
+
+        if (document.querySelector('.cart-btn').childNodes.length === 0) { cartItemBox.style.display = 'none' }
+    }))
+
+    let totalQuantity = cartItemsArray.reduce((total, item) => total + Number(item.quantity), 0)
+    // to count totale items in cart
+    const cartCircleTotal = document.querySelector('.cart-circle')
+    cartCircleTotal.textContent = totalQuantity
+}))
+
+// functon creating card with id
+
+function cardCartCreation(element, id) {
+    // create card
+    const cardItem = document.createElement('div')
+    cardItem.classList.add('cart-card')
+    cartItemContent.append(cardItem)
+
+    const imgElem = document.createElement('img')
+    imgElem.classList.add('cart-card__img')
+    imgElem.src = element.url_img
+    imgElem.alt = 'photo product'
+    cardItem.append(imgElem)
+
+    const cardData = document.createElement('div')
+    cardData.classList.add('cart-card__wrap')
+    // text-align: left
+    cardItem.append(cardData)
+
+    const cardHeading = document.createElement('div')
+    cardHeading.classList.add('cart-card__title')
+    cardHeading.textContent = element.product_name
+    cardData.append(cardHeading)
+
+    const cardInfo = document.createElement('div')
+    cardInfo.classList.add('cart-card__properties')
+    cardData.append(cardInfo)
+
+    const pPrice = document.createElement('div')
+    pPrice.classList.add('cart-card__property')
+    pPrice.textContent = 'Price: '
+    cardInfo.append(pPrice)
+
+    const pPriceSpan = document.createElement('span')
+    pPriceSpan.classList.add('cart-card__property', 'cart-card__property_color')
+    pPriceSpan.textContent = element.currency + element.price
+    pPrice.append(pPriceSpan)
+
+    const pColor = document.createElement('div')
+    pColor.classList.add('cart-card__property')
+    pColor.textContent = 'Color: ' + element.color
+    cardInfo.append(pColor)
+
+    const pSize = document.createElement('div')
+    pSize.classList.add('cart-card__property')
+    pSize.textContent = 'Color: ' + element.size
+    cardInfo.append(pSize)
+
+
+    const pQuantity = document.createElement('div')
+    pQuantity.classList.add('cart-card__property')
+    pQuantity.textContent = 'Quantity: '
+    cardInfo.append(pQuantity)
+
+    const pQuantitySpan = document.createElement('input')
+    pQuantitySpan.classList.add('cart-card__property', 'cart-card__property_quantity')
+    pQuantitySpan.type = 'number'
+    pQuantitySpan.setAttribute('type', 'number')
+    pQuantitySpan.setAttribute('min', '1')
+    pQuantitySpan.setAttribute("id", id)
+    pQuantitySpan.value = element.quantity
+    pQuantity.append(pQuantitySpan)
+
+    // Крестик
+    const exit = document.createElement('button')
+    exit.classList.add('cart-card__remove-item')
+    exit.innerHTML = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M11.2453 9L17.5302 2.71516C17.8285 2.41741 17.9962 2.01336 17.9966 1.59191C17.997 1.17045 17.8299 0.76611 17.5322 0.467833C17.2344 0.169555 16.8304 0.00177586 16.4089 0.00140366C15.9875 0.00103146 15.5831 0.168097 15.2848 0.465848L9 6.75069L2.71516 0.465848C2.41688 0.167571 2.01233 0 1.5905 0C1.16868 0 0.764125 0.167571 0.465848 0.465848C0.167571 0.764125 0 1.16868 0 1.5905C0 2.01233 0.167571 2.41688 0.465848 2.71516L6.75069 9L0.465848 15.2848C0.167571 15.5831 0 15.9877 0 16.4095C0 16.8313 0.167571 17.2359 0.465848 17.5342C0.764125 17.8324 1.16868 18 1.5905 18C2.01233 18 2.41688 17.8324 2.71516 17.5342L9 11.2493L15.2848 17.5342C15.5831 17.8324 15.9877 18 16.4095 18C16.8313 18 17.2359 17.8324 17.5342 17.5342C17.8324 17.2359 18 16.8313 18 16.4095C18 15.9877 17.8324 15.5831 17.5342 15.2848L11.2453 9Z"
+        fill="#575757" />
+</svg>`
+    exit.setAttribute("id", id)
+    cardItem.append(exit)
+
+    cartItemBox.style.display = 'flex'
+}
